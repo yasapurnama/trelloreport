@@ -14,7 +14,7 @@ if ( ! function_exists('parseEstimate'))
             $task_id    = $output_array[1];
             $hours      = str_replace(' ', '', str_replace(',', '.', $output_array[2]));
         }
-        preg_match('/(\d+)+[\s]?+m[e]?+[n]?+[i]?+[t]?/i', $str, $output_array2);
+        preg_match('/(\d+)+[\s]*?m[e]?+[n]?+[i]?+[t]?/i', $str, $output_array2);
         if(count($output_array2) == 2 && $output_array2[1] < 60){
             $minutes    = round(($output_array2[1]/60), 2);
             if($task_id == "Undefined"){
