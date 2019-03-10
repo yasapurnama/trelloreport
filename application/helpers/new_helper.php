@@ -9,7 +9,7 @@ if ( ! function_exists('parseEstimate'))
         $minutes        = 0;
         $estimate       = 0;
         $data_arr       = [];
-        preg_match('/(.*)est[\.|i]?+[m]?+[a]?+[s]?+[i]?+[\.]?+(.*)j[a]?+[m]?/i', $str, $output_array);
+        preg_match('/(.*)est[\.|i]?+[m]?+[a]?+[m]?+[a]?+[s]?+[i]?+[\.]?+(.*)j[a]?+[m]?/i', $str, $output_array);
         if(count($output_array) == 3){
             $task_id    = $output_array[1];
             $hours      = str_replace(' ', '', str_replace(',', '.', $output_array[2]));
@@ -18,7 +18,7 @@ if ( ! function_exists('parseEstimate'))
         if(count($output_array2) == 2 && $output_array2[1] < 60){
             $minutes    = round(($output_array2[1]/60), 2);
             if($task_id == "Undefined"){
-                preg_match('/(.*)est[\.|i]?+[m]?+[a]?+[s]?+[i]?/i', $str, $output_array3);
+                preg_match('/(.*)est[\.|i]?+[m]?+[a]?+[m]?+[a]?+[s]?+[i]?/i', $str, $output_array3);
                 if(count($output_array3) == 2){
                     $task_id = $output_array3[1];
                 }
