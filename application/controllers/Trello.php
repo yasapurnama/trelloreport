@@ -35,6 +35,7 @@ class Trello extends CI_Controller {
 	}
 
 	public function download(){
+		error_reporting(0);
 		$post_data = $this->input->post();
 		$this->load->helper('new_helper');
 		//dDebug($this->input->post());
